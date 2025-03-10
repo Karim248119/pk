@@ -222,4 +222,12 @@ export const projects = [
     link: "",
     type: "app",
   },
+  {
+    title: "Modern portfolio",
+    des: "",
+    img: "/p/mp.png",
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/3.png", "/fm.svg"],
+    link: "https://karim-hassan.vercel.app/",
+    type: "web",
+  },
 ];

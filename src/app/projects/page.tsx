@@ -3,8 +3,6 @@ import React from "react";
 import Typo from "../components/Typo";
 import { projects } from "../data/projects";
 import Nav from "../components/Nav";
-import CustomCursorWrapper from "../components/CustomCursor";
-import Button from "../components/Button";
 import { MdOutlineWebhook } from "react-icons/md";
 
 const ProjectCard = ({
@@ -35,7 +33,7 @@ const ProjectCard = ({
           <Typo sub fixed className="text-2xl">
             0{index + 1}.
           </Typo>
-          <Typo fixed className="text-3xl">
+          <Typo fixed className="text-4xl">
             {project.title}
           </Typo>
         </div>
@@ -49,16 +47,17 @@ const ProjectCard = ({
             </div>
           ))}
         </div>
-        {/*the problem is here */}
-        <a target="_blank" href={project.link}>
-          <button className="group/link -mb-8">
-            <div className=" uppercase flex items-center gap-1 text-accent text-sm font-semibold">
-              <MdOutlineWebhook className="group-hover/link:rotate-90 duration-500 text-base" />
-              View live site
-            </div>
-            <div className="h-[0.5px] w-0 bg-accent group-hover/link:w-full duration-500" />
-          </button>
-        </a>
+        {project.link && (
+          <a target="_blank" href={project.link}>
+            <button className="group/link -mb-8">
+              <div className=" uppercase flex items-center gap-1 text-accent text-xs font-semibold">
+                <MdOutlineWebhook className="group-hover/link:rotate-90 duration-500 text-base" />
+                View live site
+              </div>
+              <div className="h-[0.5px] w-0 bg-accent group-hover/link:w-full duration-500" />
+            </button>
+          </a>
+        )}
       </div>
       <div
         className={`w-full h-full bg-black absolute duration-500 z-30 ${
@@ -99,7 +98,7 @@ export default function page() {
             onClick={() => setFilter(tab.value)}
             className=" relative"
           >
-            <Typo fixed sub className="md:text-4xl text-xl text-secondary">
+            <Typo fixed sub className="md:text-4xl text-xl text-accent">
               {tab.title}
             </Typo>
             <div

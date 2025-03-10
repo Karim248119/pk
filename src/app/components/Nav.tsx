@@ -12,7 +12,7 @@ export default function Nav() {
   const links = [
     { text: "Home", href: "/" },
     { text: "About", href: "/#about" },
-    { text: "projects", href: "/projects" },
+    { text: "Projects", href: "/projects" },
     { text: "Contact", href: "/#contact" },
   ];
 
