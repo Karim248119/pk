@@ -67,7 +67,7 @@ export default function page() {
           src={project?.wImg}
           alt="..."
           ref={imgRef}
-          className="md:h-[76vh] md:w-[50vw] w-[90vw] object-cover center object-top -mt[10vh]"
+          className="md:h-[66vh] md:w-[50vw] w-[90vw] object-cover center object-top -mt[10vh]"
         />
       </div>
       <div className="h-[100vh] w-full bg-accent flex flex-col relative items-center">
