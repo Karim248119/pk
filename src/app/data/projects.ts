@@ -192,7 +192,7 @@ export const projects = [
   {
     title: "Angora",
     des: "A simple, clean landing page for a company, providing essential business information with elegant styling.",
-    img: "/p/a.png",
+    img: "/p/anora.png",
     iconLists: ["/html.png", "/css.png", "/js.png"],
     link: "https://karim248119.github.io/ANGORA",
     type: "web",
