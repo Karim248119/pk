@@ -58,12 +58,7 @@ export default function Nav() {
             >
               <div className="xl:flex gap-4 hidden">
                 {links.map((link, index) => (
-                  <a
-                    target="_blank"
-                    key={index}
-                    href={link.href}
-                    className="text-white"
-                  >
+                  <a key={index} href={link.href} className="text-white">
                     {link.text}
                   </a>
                 ))}

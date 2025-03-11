@@ -23,7 +23,7 @@ export default function Footer() {
           <Typo className="md:text-[10vw] text-[15vw] self-end">Together</Typo>
         </div>
         <Button
-          className=" md:w-[15vw] md:h-[15vw] w-[60vw] h-[60vw] md:mt-0 mt-8"
+          className=" md:w-[15vw] md:h-[15vw] w-[60vw] h-[60vw] md:mt-0 mt-8 md:text-base text-xs"
           onClick={() => setOpen(true)}
         >
           open contact form

@@ -52,10 +52,10 @@ export default function Contacts({
         </motion.div>
         <motion.div
           {...rise}
-          className="flex-1 relative overflow-hidden z-50 row-span-1"
+          className="flex-1 relative overflow-hidden  row-span-1"
         >
           <img
-            src="https://i.pinimg.com/736x/f1/3b/b6/f13bb677e7b94e4794186ef3f52a76f5.jpg"
+            src="/c.jpg"
             alt="..."
             className="absolute left-0 top-1/2 -translate-y-1/2 brightness-50"
           />

@@ -12,7 +12,7 @@ const ScrollToTop = () => {
     // Check if the user is scrolling down and has passed the viewport height
     if (
       currentScrollY > window.innerHeight &&
-      currentScrollY > prevScrollY.current
+      currentScrollY < prevScrollY.current
     ) {
       setIsVisible(true);
     } else {
@@ -41,7 +41,7 @@ const ScrollToTop = () => {
         <button
           onClick={scrollToTop}
           style={{
-            zIndex: 1000,
+            zIndex: 800,
           }}
           className="fixed md:bottom-8 md:right-8 bottom-4 right-4 md:text-base text-sm md:p-4 p-2 mix-blend-difference bg-white rounded-full"
         >
