@@ -79,8 +79,9 @@ export const projects = [
       "expo.svg",
       "/s.svg",
     ],
-    link: "https://ringfill.com",
+    link: "/projects/1",
     type: "both",
+    detailed: true,
   },
   {
     title: "Babel Library",
@@ -119,8 +120,9 @@ export const projects = [
       "/trpc.png",
       "/post.webp",
     ],
-    link: "https://staging.medci.org",
+    link: "/projects/2",
     type: "both",
+    detailed: true,
   },
   {
     title: "Jewel",
@@ -160,8 +162,9 @@ export const projects = [
       "/node.webp",
       "/mdb.svg",
     ],
-    link: "https://unitycare.vercel.app",
+    link: "/projects/3",
     type: "both",
+    detailed: true,
   },
 
   {

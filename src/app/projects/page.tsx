@@ -4,6 +4,8 @@ import Typo from "../components/Typo";
 import { projects } from "../data/projects";
 import Nav from "../components/Nav";
 import { MdOutlineWebhook } from "react-icons/md";
+import { PiCirclesThreeFill } from "react-icons/pi";
+import { GiSheikahEye } from "react-icons/gi";
 
 const ProjectCard = ({
   project,
@@ -17,6 +19,7 @@ const ProjectCard = ({
     link: string;
     type: string;
     iconLists: string[];
+    detailed?: boolean;
   };
   filter: string;
   index: number;
@@ -47,17 +50,28 @@ const ProjectCard = ({
             </div>
           ))}
         </div>
-        {project.link && (
-          <a target="_blank" href={project.link}>
-            <button className="group/link -mb-8">
-              <div className=" uppercase flex items-center gap-1 text-accent text-xs font-semibold">
-                <MdOutlineWebhook className="group-hover/link:rotate-90 duration-500 text-base" />
-                View live site
-              </div>
-              <div className="h-[0.5px] w-0 bg-accent group-hover/link:w-full duration-500" />
-            </button>
-          </a>
-        )}
+        {project.link &&
+          (!project.detailed ? (
+            <a target="_blank" href={project.link}>
+              <button className="group/link -mb-8">
+                <div className=" uppercase flex items-center gap-1 text-accent text-xs font-semibold tracking-widest">
+                  <GiSheikahEye className="group-hover/link:rotate-18 text-base" />
+                  View live site
+                </div>
+                <div className="h-[0.5px] w-0 bg-accent group-hover/link:w-full duration-500" />
+              </button>
+            </a>
+          ) : (
+            <a href={project.link}>
+              <button className="group/link -mb-8">
+                <div className=" uppercase flex items-center gap-1 text-accent text-xs font-semibold tracking-widest">
+                  <PiCirclesThreeFill className="group-hover/link:rotate-90 duration-500 text-base" />
+                  More Details
+                </div>
+                <div className="h-[0.5px] w-0 bg-accent group-hover/link:w-full duration-500" />
+              </button>
+            </a>
+          ))}
       </div>
       <div
         className={`w-full h-full bg-black absolute duration-500 z-30 ${
