@@ -7,12 +7,13 @@ export const COURSES = [
     description: (
       <div className="space-y-4">
         <p>
-          For six months, I’ve expanded my skills through hands-on projects,
+          In this course, I’ve expanded my skills through hands-on projects,
           focusing on:
         </p>
         <ul className="list-disc list-inside space-y-1 mx-4">
           <li>
-            <strong>Frontend:</strong> React.js, Tailwind CSS
+            <strong>Frontend:</strong>HTML, CSS, JavaScript, Tailwind CSS,
+            React.js
           </li>
           <li>
             <strong>Backend:</strong> Node.js, MongoDB
