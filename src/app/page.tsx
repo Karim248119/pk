@@ -7,6 +7,7 @@ import About from "./sections/About";
 import Projects from "./sections/Projects";
 import Skills from "./sections/Skills";
 import ScrollToTop from "./components/ScrollToTop";
+import Courses from "./sections/Courses";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Services />
       <Skills />
       <Projects />
+      <Courses />
       <Footer />
       <ScrollToTop />
     </div>

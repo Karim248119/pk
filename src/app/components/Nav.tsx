@@ -12,6 +12,13 @@ export default function Nav() {
   const links = [
     { text: "Home", href: "/" },
     { text: "About", href: "/#about" },
+    { text: "Projects", href: "/#projects" },
+    { text: "Courses", href: "/#courses" },
+    { text: "Contact", href: "/#contact" },
+  ];
+  const sideLinks = [
+    { text: "Home", href: "/" },
+    { text: "About", href: "/#about" },
     { text: "Projects", href: "/projects" },
     { text: "Contact", href: "/#contact" },
   ];
@@ -81,7 +88,7 @@ export default function Nav() {
         </button>
       </div>
       <div
-        className={`w-full h-screen bg-black fixed nav duration-500 ease-in-out ${
+        className={`w-full h-screen bg-black fixed nav duration-500 ease-in-out z-1000 ${
           isOpen ? "top-0" : "top-full"
         }`}
       >
@@ -93,9 +100,9 @@ export default function Nav() {
             <TfiClose />
           </button>
 
-          <div className="flex gap-10 md:w-3/4 w-full md:h-full h-3/4 justify-center items-center md:flex-row flex-col">
+          <div className="flex gap-10 md:w-3/4 w-full md:h-full h-3/4 justify-center items-center md:flex-row flex-col ">
             <div className="flex flex-col gap-10 text-accent">
-              {links.map((link, index) => (
+              {sideLinks.map((link, index) => (
                 <div key={index} className="group">
                   <Link
                     onClick={() => {
