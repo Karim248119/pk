@@ -57,7 +57,7 @@ function ProjectItem({ project }: { project: any }) {
 
 export default function Projects() {
   return (
-    <div className="relative z-0">
+    <section id="projects" className="relative z-0">
       {WORKS.map((project, index) => (
         <Link href={`/projects/${project.id}`} key={index}>
           <ProjectItem key={index} project={project} />
@@ -73,6 +73,6 @@ export default function Projects() {
         </div>
         <div className="h-[0.5px] w-0 group-hover:w-full duration-500 bg-accent" />
       </Link>
-    </div>
+    </section>
   );
 }

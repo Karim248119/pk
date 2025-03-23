@@ -29,6 +29,7 @@ export default function About() {
   }, []);
   return (
     <section
+      id="about"
       className="min-h-screen w-full relative bg-accent flex flex-col-reverse md:flex-row md:justify-center items-center"
       ref={containerRef}
     >
