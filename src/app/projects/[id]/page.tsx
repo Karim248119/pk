@@ -12,9 +12,25 @@ import Link from "next/link";
 import { PiCirclesFourFill } from "react-icons/pi";
 import SpreadImgs from "@/app/components/SpreadImgs";
 import { BsApple, BsGooglePlay } from "react-icons/bs";
+import Lenis from "lenis";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function page() {
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 2.6,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    });
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
+
   const conRef = useRef(null);
   const imgRef = useRef(null);
 

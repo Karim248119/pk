@@ -134,11 +134,11 @@ export const projects = [
   },
 
   {
-    title: "ugreen",
-    des: "A simple, clean landing page for a company, providing essential business information with elegant styling.",
-    img: "/p/u.png",
-    iconLists: ["/next.svg", "/tail.svg", "ts.svg", "/sp.webp"],
-    link: "https://ugreen-0.vercel.app/",
+    title: "Anubis-ui",
+    des: "A react ui library for building modern and stunning user interfaces.",
+    img: "/p/an.png",
+    iconLists: ["/next.svg", "/tail.svg", "ts.svg", "/fm.svg", "3.png"],
+    link: "https://anubis-ui.vercel.app/",
     type: "web",
   },
   {

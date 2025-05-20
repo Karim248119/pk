@@ -2,7 +2,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import { TfiClose } from "react-icons/tfi";
 import Typo from "./Typo";
-import Button from "./Button";
 import IconButton from "./IconButton";
 import { CONTACTS } from "../data/Contacts";
 import ContactForm from "./ContactForm";
