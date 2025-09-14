@@ -3,7 +3,7 @@ import React, { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Typo from "./Typo";
-import { SKILLS } from "../data/Skills";
+import { SKILLS } from "@/data/Skills";
 
 gsap.registerPlugin(ScrollTrigger);
 

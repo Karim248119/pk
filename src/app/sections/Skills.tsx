@@ -1,6 +1,6 @@
 import React from "react";
-import HorizontalSlider from "../components/HrizontalSwiper";
-import Typo from "../components/Typo";
+import HorizontalSlider from "@/components/HrizontalSwiper";
+import Typo from "@/components/Typo";
 
 export default function Skills() {
   return (

@@ -1,9 +1,8 @@
 "use client";
 import React from "react";
-import Typo from "../components/Typo";
-import { projects } from "../data/projects";
-import Nav from "../components/Nav";
-import { MdOutlineWebhook } from "react-icons/md";
+import Typo from "@/components/Typo";
+import { projects } from "@/data/projects";
+import Nav from "@/components/Nav";
 import { PiCirclesThreeFill } from "react-icons/pi";
 import { GiSheikahEye } from "react-icons/gi";
 

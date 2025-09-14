@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Typo from "../components/Typo";
-import Button from "../components/Button";
-import Contacts from "../components/Contacts";
+import Typo from "@/components/Typo";
+import Button from "@/components/Button";
+import Contacts from "@/components/Contacts";
 import { AnimatePresence } from "framer-motion";
 
 export default function Footer() {

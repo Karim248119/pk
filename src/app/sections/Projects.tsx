@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
-import Typo from "../components/Typo";
-import { WORKS } from "../data/projects";
-import CustomCursorWrapper from "../components/CustomCursor";
+import Typo from "@/components/Typo";
+import { WORKS } from "@/data/projects";
+import CustomCursorWrapper from "@/components/CustomCursor";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";

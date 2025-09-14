@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Collapse from "../components/Collapse";
-import Typo from "../components/Typo";
-import { COURSES } from "../data/Courses";
+import Collapse from "@/components/Collapse";
+import Typo from "@/components/Typo";
+import { COURSES } from "@/data/Courses";
 import { PiCertificate } from "react-icons/pi";
 import {
   AiOutlineSafetyCertificate,

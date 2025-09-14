@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from "react";
-import Typo from "../components/Typo";
+import Typo from "@/components/Typo";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Button from "../components/Button";
+import Button from "@/components/Button";
 import { VscGithubAlt } from "react-icons/vsc";
 import { RiLinkedinLine } from "react-icons/ri";
 

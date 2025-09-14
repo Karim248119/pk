@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { TfiClose } from "react-icons/tfi";
 import Typo from "./Typo";
 import IconButton from "./IconButton";
-import { CONTACTS } from "../data/Contacts";
+import { CONTACTS } from "@/data/Contacts";
 import ContactForm from "./ContactForm";
 
 const rise = {

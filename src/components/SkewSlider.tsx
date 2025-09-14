@@ -1,9 +1,9 @@
 "use client";
-import { projects } from "../data/projects";
+import { projects } from "@/data/projects";
 import React, { useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Logo from "../components/Logo";
+import Logo from "@/components/Logo";
 
 gsap.registerPlugin(ScrollTrigger);
 

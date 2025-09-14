@@ -5,7 +5,7 @@ import { TfiClose } from "react-icons/tfi";
 import { motion, AnimatePresence } from "framer-motion";
 import Typo from "./Typo";
 import { Fonts } from "@/lib/fonts";
-import { CONTACTS } from "../data/Contacts";
+import { CONTACTS } from "@/data/Contacts";
 import IconButton from "./IconButton";
 import Logo from "./Logo";
 

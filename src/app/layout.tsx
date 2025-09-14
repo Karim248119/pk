@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import "./globals.css";
 import { Fonts } from "@/lib/fonts";
-import StairTransition from "./components/motions/NavTransition";
+import StairTransition from "@/components/motions/NavTransition";
 
 export const metadata: Metadata = {
   title: "Karim",

@@ -1,7 +1,7 @@
 import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Typo from "../components/Typo";
+import Typo from "@/components/Typo";
 
 gsap.registerPlugin(ScrollTrigger);
 

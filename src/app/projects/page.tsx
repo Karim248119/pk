@@ -1,16 +1,50 @@
 "use client";
 
-import { useState } from "react";
-import { projects } from "../data/projects";
-import Typo from "../components/Typo";
+import { useEffect, useState } from "react";
+import { projects } from "@/data/projects";
+import Typo from "@/components/Typo";
 import { FaCircle } from "react-icons/fa6";
-import Nav from "../components/Nav";
+import Nav from "@/components/Nav";
 import { HiOutlineArrowUpRight } from "react-icons/hi2";
 import { AiOutlineClose } from "react-icons/ai";
-import { CONTACTS } from "../data/Contacts";
+import { CONTACTS } from "@/data/Contacts";
+import gsap from "gsap";
+import ButtonLink from "@/components/ButtonLink";
 
 const Projects = () => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [imagesLoaded, setImagesLoaded] = useState(0);
+  const [loading, setLoading] = useState(true);
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const percentage = Math.round((imagesLoaded / projects.length) * 100);
+
+    if (percentage > progress) {
+      // use GSAP to tween progress instead of setInterval
+      gsap.to(
+        { val: progress },
+        {
+          val: percentage,
+          duration: 0.6,
+          ease: "power2.out",
+          onUpdate: function () {
+            setProgress(Math.round(this.targets()[0].val));
+          },
+        }
+      );
+    }
+
+    if (percentage === 100) {
+      const timeout = setTimeout(() => setLoading(false), 500); // small delay so 100% is visible
+      return () => clearTimeout(timeout);
+    }
+  }, [imagesLoaded, progress]);
+
+  const handleImageLoad = () => {
+    setImagesLoaded((prev) => prev + 1);
+  };
+
   const selectedProject = selectedIndex ? projects[selectedIndex - 1] : null;
 
   const colors = {
@@ -29,7 +63,7 @@ const Projects = () => {
         <FaCircle className="text-[5px] mr-2" />
         {type}
       </Typo>
-      <Typo base hidden duration={1} className="">
+      <Typo base hidden duration={1}>
         {skill || (
           <div className="w-20 h-[1px] bg-current transition-colors duration-1000 " />
         )}
@@ -67,6 +101,15 @@ const Projects = () => {
         color: colors.text,
       }}
     >
+      {/* Loader overlay with GSAP counter */}
+      {loading && (
+        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black text-white z-50">
+          <Typo fixed className="text-7xl text-accent tracking-wider">
+            {String(progress).padStart(3, "0")} %
+          </Typo>
+        </div>
+      )}
+
       {/* Navigation */}
       <div className="flex gap-2 absolute md:top-8 top-[18vh] left-1/2 -translate-x-1/2">
         {projects.map((_, i) => (
@@ -82,6 +125,7 @@ const Projects = () => {
       </div>
 
       <Nav className="!mix-blend-normal" hideNavLinks />
+
       {/* Project Gallery */}
       <div
         className={`flex h-full items-center justify-center select-none overflow-hidden ${
@@ -103,6 +147,7 @@ const Projects = () => {
               <img
                 src={item.img}
                 alt={item.title}
+                onLoad={handleImageLoad}
                 className="w-full h-full object-cover"
               />
             </div>
@@ -116,7 +161,7 @@ const Projects = () => {
           <Typo
             key={selectedIndex}
             hidden
-            className="md:text-[10vw] text-[10vw]  uppercase tracking-[0.2em] leading-none text-center"
+            className="md:text-[10vw] text-[10vw] uppercase tracking-[0.2em] leading-none text-center"
           >
             {selectedProject.title}
           </Typo>
@@ -143,17 +188,20 @@ const Projects = () => {
 
           <div className="justify-self-end space-y-1 uppercase text-[10px]">
             {selectedProject.link && (
-              <a href={selectedProject.link} target="_blank" className="group">
-                <Typo
-                  base
-                  hidden
-                  duration={1}
-                  className="flex items-center gap-1"
-                >
-                  CHECK <HiOutlineArrowUpRight />
-                </Typo>
-                <div className="h-[1px] bg-current w-0 group-hover:w-full duration-500" />
-              </a>
+              // <a href={selectedProject.link} target="_blank" className="group">
+              //   <Typo
+              //     base
+              //     hidden
+              //     duration={1}
+              //     className="flex items-center gap-1"
+              //   >
+              //     CHECK <HiOutlineArrowUpRight />
+              //   </Typo>
+              //   <div className="h-[1px] bg-current w-0 group-hover:w-full duration-500" />
+              // </a>
+              <ButtonLink href={selectedProject.link}>
+                CHECK <HiOutlineArrowUpRight />
+              </ButtonLink>
             )}
             <button onClick={() => setSelectedIndex(null)} className=" group">
               <Typo
@@ -171,12 +219,15 @@ const Projects = () => {
       )}
 
       {selectedIndex === null && (
-        <div className="absolute bottom-5 right-5 md:bottom-10 md:right-20 flex flex-col text-xs">
-          {CONTACTS.slice(2).map((item, i) => (
-            <a href={item.href} target="_blank" key={i}>
-              {item.title}
-            </a>
-          ))}
+        <div className="w-full absolute bottom-10 lef-0 md:px-20 px-5 flex flex-col md:flex-row justify-between md:items-end">
+          <ButtonLink href={CONTACTS[4].href}>karimoda66@gmail.com</ButtonLink>
+          <div className=" md:bottom-10 md:right-20 flex flex-col gap-1 mt-5 text-xs">
+            {CONTACTS.slice(1, -1).map((item, i) => (
+              <ButtonLink href={item.href} key={i}>
+                {item.title}{" "}
+              </ButtonLink>
+            ))}
+          </div>
         </div>
       )}
     </div>

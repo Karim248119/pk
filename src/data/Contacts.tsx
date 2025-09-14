@@ -7,14 +7,14 @@ import {
 } from "react-icons/fa6";
 export const CONTACTS = [
   {
-    title: "Whatsapp",
-    icon: <FaWhatsapp />,
-    href: "https://wa.me/201020096263",
-  },
-  {
     title: "Facebook",
     icon: <FaFacebookF />,
     href: "https://www.facebook.com/kareem.kemo.75098364?mibextid=ZbWKwL",
+  },
+  {
+    title: "Whatsapp",
+    icon: <FaWhatsapp />,
+    href: "https://wa.me/201020096263",
   },
 
   {

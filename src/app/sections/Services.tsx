@@ -1,9 +1,9 @@
 import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import ServicesCard from "../components/ServicesCard";
-import Typo from "../components/Typo";
-import { SERVICES } from "../data/Services";
+import ServicesCard from "@/components/ServicesCard";
+import Typo from "@/components/Typo";
+import { SERVICES } from "@/data/Services";
 
 gsap.registerPlugin(ScrollTrigger);
 
