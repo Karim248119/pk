@@ -20,8 +20,7 @@ const Projects = () => {
   useEffect(() => {
     const percentage = Math.round((imagesLoaded / projects.length) * 100);
 
-    if (percentage > progress) {
-      // use GSAP to tween progress instead of setInterval
+    if (percentage !== progress) {
       gsap.to(
         { val: progress },
         {
@@ -36,10 +35,18 @@ const Projects = () => {
     }
 
     if (percentage === 100) {
-      const timeout = setTimeout(() => setLoading(false), 500); // small delay so 100% is visible
+      const timeout = setTimeout(() => setLoading(false), 500);
       return () => clearTimeout(timeout);
     }
   }, [imagesLoaded, progress]);
+  useEffect(() => {
+    projects.forEach((p) => {
+      const img = new Image();
+      img.src = p.img;
+      img.onload = handleImageLoad;
+      img.onerror = handleImageLoad;
+    });
+  }, []);
 
   const handleImageLoad = () => {
     setImagesLoaded((prev) => prev + 1);
@@ -160,7 +167,6 @@ const Projects = () => {
               <img
                 src={item.img}
                 alt={item.title}
-                onLoad={handleImageLoad}
                 className="w-full h-full object-cover"
               />
             </div>
