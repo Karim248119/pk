@@ -103,11 +103,15 @@ const Projects = () => {
     >
       {/* Loader overlay with GSAP counter */}
       <div
-        className={`absolute w-full h-1/2 top-1/2 -translate-y-1/2 bg-dark duration-300 delay-500 z-10 ${
-          loading ? "opacity-100" : "opacity-0"
+        className={`absolute w-full h-1/2 top-1/2 -translate-y-1/2 bg-dark duration-300 delay-500 ${
+          loading ? "opacity-100 z-10 " : "opacity-0 z-0"
         } `}
       />
-      <div className="absolute w-full h-1/2 top-1/2 -translate-y-1/2 flex flex-col items-center justify-center z-20">
+      <div
+        className={`absolute w-full h-1/2 top-1/2 -translate-y-1/2 flex flex-col items-center justify-center duration-500 ${
+          loading ? "z-20 " : "z-0"
+        }`}
+      >
         <Typo
           hidden
           fixed
