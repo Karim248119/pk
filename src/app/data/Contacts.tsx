@@ -23,14 +23,13 @@ export const CONTACTS = [
     href: "https://www.instagram.com/sora_00013?igsh=MXJpNHJ1ZWVvN2dhdw==",
   },
   {
-    title: "Send an Email",
-    icon: <BiLogoGmail />,
-    href: "mailto:karimoda66@gmail.com",
-  },
-
-  {
     title: "LinkedIn",
     icon: <FaLinkedinIn />,
     href: "https://www.linkedin.com/in/karim248/",
+  },
+  {
+    title: "Email",
+    icon: <BiLogoGmail />,
+    href: "mailto:karimoda66@gmail.com",
   },
 ];

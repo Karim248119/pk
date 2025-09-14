@@ -42,11 +42,7 @@ export default function About() {
         />
       </div>
       <div className="p-5">
-        <Typo
-          fixed
-          sub
-          className="text-3xl text-black mb-5 ${Fonts.fancy.className"
-        >
+        <Typo fixed sub className="text-3xl text-black mb-5">
           About
         </Typo>
         <p className="text-black md:w-[30vw] md:text-base text-xs">

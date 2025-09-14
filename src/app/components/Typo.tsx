@@ -10,12 +10,18 @@ export default function Typo({
   children,
   className,
   sub,
+  base,
   fixed,
+  duration = 1.5,
+  hidden = false,
 }: {
   children: React.ReactNode;
   className?: string;
   sub?: boolean;
+  base?: boolean;
   fixed?: boolean;
+  duration?: number;
+  hidden?: boolean;
 }) {
   const elRef = useRef<HTMLDivElement>(null);
 
@@ -33,16 +39,16 @@ export default function Typo({
         // When scrolling down, animate in from below
         gsap.fromTo(
           el,
-          { y: 100, opacity: 0 },
-          { y: 0, opacity: 1, duration: 1.5, ease: "power2.out" }
+          { y: 100, opacity: 1 },
+          { y: 0, opacity: 1, duration, ease: "power2.out" }
         );
       },
       onEnterBack: () => {
         // When scrolling up, animate in from above
         gsap.fromTo(
           el,
-          { y: -100, opacity: 0 },
-          { y: 0, opacity: 1, duration: 1.5, ease: "power2.out" }
+          { y: -100, opacity: 1 },
+          { y: 0, opacity: 1, duration, ease: "power2.out" }
         );
       },
       // Optional: adjust end or other callbacks if needed
@@ -50,14 +56,20 @@ export default function Typo({
   }, []);
 
   return (
-    <div
-      ref={fixed ? null : elRef}
-      style={{ opacity: fixed ? 1 : 0 }} // Ensures it starts hidden
-      className={` ${
-        sub ? Fonts.fancy.className : Fonts.nueueBold.className
-      } ${className}`}
-    >
-      {children}
+    <div className={hidden ? "overflow-hidden" : ""}>
+      <div
+        ref={fixed ? null : elRef}
+        style={{ opacity: fixed ? 1 : 0 }} // Ensures it starts hidden
+        className={` ${
+          sub
+            ? Fonts.fancy.className
+            : base
+            ? Fonts.quicksand.className
+            : Fonts.nueueBold.className
+        } ${className}`}
+      >
+        {children}
+      </div>
     </div>
   );
 }

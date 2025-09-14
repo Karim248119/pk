@@ -7,8 +7,15 @@ import Typo from "./Typo";
 import { Fonts } from "@/lib/fonts";
 import { CONTACTS } from "../data/Contacts";
 import IconButton from "./IconButton";
+import Logo from "./Logo";
 
-export default function Nav() {
+export default function Nav({
+  className,
+  hideNavLinks,
+}: {
+  className?: string;
+  hideNavLinks?: boolean;
+}) {
   const links = [
     { text: "Home", href: "/" },
     { text: "About", href: "/#about" },
@@ -47,15 +54,17 @@ export default function Nav() {
   return (
     <>
       <Link href="/">
-        <div className="text-accent mix-blend-difference fixed md:top-5 top-6 md:left-20 left-5 z-40">
-          <div className={`md:text-4xl text-2xl ${Fonts.logo.className}`}>
-            K
-          </div>
+        <div
+          className={`text-current mix-blend-difference fixed md:top-5 top-4 md:left-20 left-5 z-40 ${className}`}
+        >
+          <Logo />
         </div>
       </Link>
-      <div className="flex gap-10 items-center fixed top-5 right-20 z-40 mix-blend-difference">
+      <div
+        className={`flex gap-10 items-center fixed top-5 right-20 z-40 mix-blend-difference ${className}`}
+      >
         <AnimatePresence>
-          {showNavLinks && (
+          {showNavLinks && !hideNavLinks && (
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -83,8 +92,8 @@ export default function Nav() {
           className="flex md:w-20 w-12 h-10 flex-col gap-2 overflow-hidden group md:relative fixed top-3 right-4 md:top-0 md:right-0"
           onClick={() => setIsOpen(!isOpen)}
         >
-          <div className="w-full h-[1px] bg-white absolute top-4 left-0 duration-500 group-hover:left-5" />
-          <div className="w-full h-[1px] bg-white absolute bottom-4 left-0 duration-500 group-hover:-left-5" />
+          <div className="w-full h-[1px] bg-current absolute top-4 left-0 duration-500 group-hover:left-5" />
+          <div className="w-full h-[1px] bg-current absolute bottom-4 left-0 duration-500 group-hover:-left-5" />
         </button>
       </div>
       <div

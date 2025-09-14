@@ -130,3 +130,7 @@ html {
 .text-outline-main {
   -webkit-text-stroke: 1px var(--main-color--);
 }
+
+button {
+  cursor: pointer;
+}
