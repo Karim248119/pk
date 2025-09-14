@@ -30,7 +30,7 @@ export default function Stairs() {
                 ? "bg-accent"
                 : index === 1
                 ? "bg-secondary"
-                : "bg-black"
+                : "bg-dark"
             }`}
           />
         );

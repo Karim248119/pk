@@ -102,13 +102,22 @@ const Projects = () => {
       }}
     >
       {/* Loader overlay with GSAP counter */}
-      {loading && (
-        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black text-white z-50">
-          <Typo fixed className="text-7xl text-accent tracking-wider">
-            {String(progress).padStart(3, "0")} %
-          </Typo>
-        </div>
-      )}
+      <div
+        className={`absolute w-full h-1/2 top-1/2 -translate-y-1/2 bg-dark duration-300 delay-500 z-10 ${
+          loading ? "opacity-100" : "opacity-0"
+        } `}
+      />
+      <div className="absolute w-full h-1/2 top-1/2 -translate-y-1/2 flex flex-col items-center justify-center z-20">
+        <Typo
+          hidden
+          fixed
+          className={`text-7xl text-accent tracking-wider duration-500 ${
+            loading ? "" : "-mt-20"
+          }`}
+        >
+          {String(progress).padStart(3, "0")} %
+        </Typo>
+      </div>
 
       {/* Navigation */}
       <div className="flex gap-2 absolute md:top-8 top-[18vh] left-1/2 -translate-x-1/2">
@@ -188,17 +197,6 @@ const Projects = () => {
 
           <div className="justify-self-end space-y-1 uppercase text-[10px]">
             {selectedProject.link && (
-              // <a href={selectedProject.link} target="_blank" className="group">
-              //   <Typo
-              //     base
-              //     hidden
-              //     duration={1}
-              //     className="flex items-center gap-1"
-              //   >
-              //     CHECK <HiOutlineArrowUpRight />
-              //   </Typo>
-              //   <div className="h-[1px] bg-current w-0 group-hover:w-full duration-500" />
-              // </a>
               <ButtonLink href={selectedProject.link}>
                 CHECK <HiOutlineArrowUpRight />
               </ButtonLink>
