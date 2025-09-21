@@ -190,6 +190,18 @@ export const projects = [
     type: "app",
   },
   {
+    title: "Manzzeli",
+    des: "",
+    img: "/p/mn.png",
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", ,],
+    front: "Next.js,  tailwind,  TS,  gsap",
+    link: "https://manzzeli.vercel.app/",
+    type: "web",
+    detailed: false,
+    bgColor: "#BCB6A6",
+    txtColor: "#822927",
+  },
+  {
     title: "UnityCare",
     des: "Healthcare platform offering online appointment booking, doctor and specialty information, and medical news for streamlined patient-administrator interactions.",
     img: "/p/uc.png",
