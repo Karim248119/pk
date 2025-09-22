@@ -193,7 +193,7 @@ export const projects = [
     title: "Manzzeli",
     des: "",
     img: "/p/mn.png",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", ,],
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
     front: "Next.js,  tailwind,  TS,  gsap",
     link: "https://manzzeli.vercel.app/",
     type: "web",
