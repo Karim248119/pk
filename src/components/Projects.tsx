@@ -13,44 +13,6 @@ import ButtonLink from "@/components/ButtonLink";
 
 const Projects = () => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
-  const [imagesLoaded, setImagesLoaded] = useState(0);
-  const [loading, setLoading] = useState(true);
-  const [progress, setProgress] = useState(0);
-
-  useEffect(() => {
-    const percentage = Math.round((imagesLoaded / projects.length) * 100);
-
-    if (percentage !== progress) {
-      gsap.to(
-        { val: progress },
-        {
-          val: percentage,
-          duration: 0.6,
-          ease: "power2.out",
-          onUpdate: function () {
-            setProgress(Math.round(this.targets()[0].val));
-          },
-        }
-      );
-    }
-
-    if (percentage === 100) {
-      const timeout = setTimeout(() => setLoading(false), 500);
-      return () => clearTimeout(timeout);
-    }
-  }, [imagesLoaded, progress]);
-  useEffect(() => {
-    projects.forEach((p) => {
-      const img = new Image();
-      img.src = p.img;
-      img.onload = handleImageLoad;
-      img.onerror = handleImageLoad;
-    });
-  }, []);
-
-  const handleImageLoad = () => {
-    setImagesLoaded((prev) => prev + 1);
-  };
 
   const selectedProject = selectedIndex ? projects[selectedIndex - 1] : null;
 
@@ -108,28 +70,6 @@ const Projects = () => {
         color: colors.text,
       }}
     >
-      {/* Loader overlay with GSAP counter */}
-      <div
-        className={`absolute w-full h-1/2 top-1/2 -translate-y-1/2 bg-dark duration-300 delay-500 ${
-          loading ? "opacity-100 z-10 " : "opacity-0 z-0"
-        } `}
-      />
-      <div
-        className={`absolute w-full h-1/2 top-1/2 -translate-y-1/2 flex flex-col items-center justify-center duration-500 ${
-          loading ? "z-20 " : "z-0"
-        }`}
-      >
-        <Typo
-          hidden
-          fixed
-          className={`text-7xl text-accent tracking-wider duration-500 ${
-            loading ? "" : "-mt-20"
-          }`}
-        >
-          {String(progress).padStart(3, "0")} %
-        </Typo>
-      </div>
-
       {/* Navigation */}
       <div className="flex gap-2 absolute md:top-8 top-[18vh] left-1/2 -translate-x-1/2">
         {projects.map((_, i) => (

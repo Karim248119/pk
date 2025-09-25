@@ -328,7 +328,7 @@ export const projects = [
     bgColor: "#5A0395",
   },
   {
-    title: "Antichristos",
+    title: "Anti christos",
     des: "",
     img: "/p/anti.png",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/fm.svg"],
